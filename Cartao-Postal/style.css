@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;1,300&family=Quicksand:wght@300;400&display=swap');
+@import url('//db.onlinewebfonts.com/c/e9e07f977067124416ea387033678909?family=ColonMonoW01-Light');
+
+@font-face{
+    font-family: 'Courier-PS-Regular';
+    src: url("Courier-PS-Regular.ttf");
+}
+.container{
+    width: 400px;
+    height: 200px;
+    background-image: url("background.png");
+    background-size: cover;
+    border: 10px solid #000;
+    border-width: 10px 20px 40px 25px;
+    
+}
+
+p{
+    margin: 20px 20px;
+    font-weight: 500;
+    font-family: "Colon Mono W01 Light";
+    font-size: 20px;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    font-family: 'Courier-PS-Regular';
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
