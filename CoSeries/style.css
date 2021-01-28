@@ -6,6 +6,14 @@
     font-family: "Labrador";
     src: url("labrador.ttf");
 }
+
+:root{
+    --font-primary: "Pirata One", serif;
+    --font-secundary: "Helvietica Neue", serif;
+    --color-black: #000000;
+    --color-gray: #808080;
+    --color-red: #ff0000;
+}
 *{
     padding: 0;
     margin: 0;
@@ -34,7 +42,7 @@ header{
     
 }
 .menu{
-    background-color: #000;
+    background-color: var(--color-black);
     margin: 0;    
     display: flex;
     align-items: center;
@@ -44,19 +52,19 @@ header{
 }
 
 .logo{
-    background-color: #FF0000;
+    background-color: var(--color-red);
     height: 3.5rem;
     width: 10rem;
     border-radius: 1.5rem;
     font-size: 2.5rem;
-    font-family: "Pirata One", serif;
+    font-family: var(--font-primary);
     margin-left: 1.2rem;
     margin-right: 1.2rem;
     text-align: center;
 }
 
 .logo a{
-    color: #000;
+    color: var(--color-black);
 }
 
 .search{ 
@@ -72,7 +80,7 @@ header{
     border-radius: 2rem;
     outline: none;
     font-weight: lighter;
-    font-family: "Helvetica Neue" ,serif;
+    font-family: var(--font-secundary);
     font-size: 1rem;
     padding: 1rem;
     color:#4f4f4f;
@@ -82,7 +90,7 @@ header{
 .search a{
     font-size: 1.3rem;
     align-items: center;
-    color: #000000;
+    color: var(--color-black);
     position: absolute;
     right: 3.6rem;
     top: 0.31rem;
@@ -114,7 +122,7 @@ header{
     position: fixed;
     top: 5rem;
     left: -20rem;
-    background-color: #000;
+    background-color: var(--color-black);
     z-index: 150;
     display: none;
     transition: all 150ms;
@@ -130,9 +138,9 @@ header{
 
 .sidebar a{
     margin: 0;
-    color: #808080;
+    color: var(--color-gray);
     font-size: 1.1rem;
-    font-family: "Helvetica Neue";
+    font-family: var(--font-secundary);
     text-shadow: .1rem .1rem 2px #80808040;
     padding-left: 1rem;
     transition: color 1s;
@@ -142,16 +150,18 @@ header{
 }
 
 .sidebar li:hover{
-    border-left: 2px solid #FF0000;
+    border-left: 2px solid var(--color-red);
 }
-
+.sidebar li:active{
+    border-left: 5px solid var(--color-red);
+}
 .bars{
     display: none;
 }
 
-.comedy{
+.section-genre{
     width: 100%;
-    height: 100vh;
+    height: 82vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,27 +169,27 @@ header{
     position: relative;
 }
 .card-title{
-    color: #808080;
-    font-family: "Pirata One";
+    color: var(--color-gray);
+    font-family: var(--font-primary);
     font-size: 2rem;
-    width: 7rem;
+    width: 10rem;
     height: 3rem;
     position: absolute;
     text-shadow: .2rem .1rem 2px rgba(0, 0, 0, 0.4);
     top: 3rem;
     left: 8rem;
 }
-.card-comedy{
+.card-genre{
     width: 80%;
-    height: 65%;
+    height: 92%;
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
-    
+    margin-top: 11rem;
 }
 .card{
     width: 23%;
-    height: 100%;
+    height: 84%;
     border-radius: 20px;
     box-shadow: .2rem .2rem 1px rgba(0, 0, 0, 0.4);
 }
@@ -228,18 +238,34 @@ header{
     background-image: url("imagens/card-comedy-the-big-bang-theory.jpg");
     background-size: cover;
 }
+#card-super-hero-the-flash{
+    background-image: url("imagens/card-super-hero-the-flash.jpg");
+    background-size: cover;
+}
+#card-super-hero-arrow{
+    background-image: url("imagens/card-super-hero-arrow.jpg");
+    background-size: cover;
+}
+#card-super-hero-super-girl{
+    background-image: url("imagens/card-super-hero-super-girl.jpg");
+    background-size: cover;
+}
+#card-super-hero-dcs-legends-os-tomorrow{
+    background-image: url("imagens/card-super-hero-dcs-legends-of-tomorrow.jpg");
+    background-size: cover;
+}
 .card-info{
     width: 100%;
     height: 35%;
     border-radius: 0px 0px 20px 20px;
-    background-color: #000;
+    background-color: var(--color-black);
     position: relative;
 }
 
 .card-info p{
     padding-left: 1rem;
     padding-bottom: 0.5rem;
-    color: #808080;
+    color: var(--color-gray);
 }
 .note{
     padding-top: 1rem;
@@ -248,7 +274,7 @@ header{
     color: #ffff00;
 } 
 .details i{
-    color: #000;
+    color: var(--color-black);
     font-size: 1.2rem;
     line-height: 1.2rem;
 }
@@ -259,9 +285,9 @@ header{
 
 .card-info button{
     border-radius: 5px;
-    background-color: #ff0000;
-    color: #000;
-    font-family: "Pirata One", serif;
+    background-color: var(--color-red);
+    color: var(--color-black);
+    font-family: var(--font-primary);
     text-align: center;
     font-size: 1.5rem;
     border: none;
@@ -276,8 +302,65 @@ header{
     position: absolute;
     bottom: 10px;
     cursor: pointer;
+    transition: all 1s;
+}
+.card-info button:hover{
+    opacity: 0.5;
+}
+.last-class{
+    padding-bottom: 5rem;
+}
+footer{
+    background-color: var(--color-black);
+    height: 25vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.footer-content{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
 }
 
+.footer-content p{
+    color: #a1a1a1;
+    font-size: 1rem;
+    font-family: var(--font-secundary);
+    opacity: 0.8;
+}
+
+.social-media ul{
+    display: flex;
+    margin-right: 50px;
+}
+.social-media a{
+    margin: 15px;
+    font-size: 2rem;
+    color: var(--color-gray);
+    transition: all 1s;
+}
+.social-media a:hover{
+    opacity: 0.5;
+}
+.list-genre{
+    max-height: 100px;
+    width: 350px;
+}
+.list-genre a{
+    color: var(--color-gray);
+    width: 85px;
+    display: inline-block;
+    font-family: var(--font-secundary);
+}
+.list-genre a:hover{
+    text-decoration: underline;
+}
+.list-genre li{
+    display: inline-block;
+}
 
 @media screen and (max-width: 829px){
     header{
@@ -286,9 +369,12 @@ header{
     .search{
         position: absolute;
         top: 90px;
-        width: 63%;
-        margin-left: 7rem;
-        margin-right: 7rem;
+        width: 37%;
+        right: 0;
+        margin: 0;
+    }
+    .search a{
+        right: 2.6rem;
     }
     .bars{
         display: none;
@@ -296,6 +382,51 @@ header{
     .sidebar{
         display: none;
     }
+    .card-info{
+        height: 48%;
+    }
+    .card-genre{
+        width: 95%;
+        height: 84%;
+        margin-top: 5rem;
+    }
+    .section-genre{
+        height: 85vh;
+    }
+    .card-info button{
+        margin-left: 1rem;
+        width: 73%;
+    }
+    .card{
+        margin-top: px;
+    }
+    .card-title{
+        left: 1rem;
+        top: 0.5rem;
+    }
+    .last-class{
+        padding-bottom: 50px;
+    }
+    .footer-content{
+        margin-left: 25px;
+    }
+    .footer-content p{
+        font-size: 12px;
+    }
+    .list-genre{
+        width: 263px;
+    }
+    .list-genre a{
+        font-size: 12px;
+    }
+    .social-media ul{
+        margin-right: 15px;
+    }
+    .social-media a{
+        font-size: 1.3rem;
+        margin: 10px;
+    }
+    
 }
 
 @media screen and (max-width: 553px){
@@ -349,7 +480,7 @@ header{
         font-size: 1.1rem;
         border-radius: 0.3rem;
         background-color: #363636;
-        font-family: "Helvetica Neue";
+        font-family: var(--font-secundary);
         opacity: 0.4;
         color: #fff;
     }
@@ -369,5 +500,37 @@ header{
 
     .sidebar{
         display: inline-block;
+    }
+    .list-genre{
+        display: none;
+    }
+    .footer-content{
+        font-size: 10px;
+        width: 50%;
+    }
+    .social-media a{
+        font-size: 1.5rem;
+    }
+    .social-media ul{
+        margin-right: 43px;
+    }
+    .card-genre{
+        display: inline-block;
+        width: 100%;
+        
+    }
+    .section-genre{
+        height: 270vh;
+    }
+    .card{
+        width: 60%;
+        height: 23%;
+        margin: -110px 0px 180px 74px;
+    }
+    .last-class{
+        padding-bottom: 0;
+    }
+    .card-title{
+        left: 7.5rem;
     }
 }
