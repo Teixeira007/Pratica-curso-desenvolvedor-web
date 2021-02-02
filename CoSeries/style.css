@@ -13,6 +13,7 @@
     --color-black: #000000;
     --color-gray: #808080;
     --color-red: #ff0000;
+    --color-white: #ffffff;
 }
 *{
     padding: 0;
@@ -108,7 +109,7 @@ header{
 
 .sub-menu-links{
     margin-right: 1.5rem;
-    color: #FFF;
+    color: var(--color-white);
     font-family: "Labrador";
     transition: color 1s;
 }
@@ -192,6 +193,7 @@ header{
     height: 84%;
     border-radius: 20px;
     box-shadow: .2rem .2rem 1px rgba(0, 0, 0, 0.4);
+    position: relative;
 }
 
 .card-wraper{
@@ -206,18 +208,54 @@ header{
 }
 .card-wraper i{
     font-size: 6rem;
-    color: #fff;
+    color: var(--color-white);
     visibility: hidden;
     transition: all 150ml;
 }
+.add-list i{
+    font-size: 1.5rem;
+    position: absolute;
+    color: var(--color-white);
+    opacity: 1;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    visibility: hidden;
+    background-color: rgba(128, 127, 127, 0.6);
+}
+.text-add-list{
+    position: absolute;
+    top: -50px;
+    right: -81px;
+    background-color: #fff;
+    padding: 5px 10px;
+    color: var(--color-black);
+    font-family: var(--font-secundary);
+    font-size: 1.3rem;
+    border-radius: 10px;
+    visibility:hidden;
+    width: 211px;
+}
 
+.card:hover i{
+    visibility: visible;
+}
+.add-list i:hover{
+    border: 2px solid var(--color-white);
+    opacity: 1;
+}
+.add-list i:hover p{
+    visibility: visible;
+}
 .card-wraper:hover i{
     visibility: visible;
     opacity: 1;
     cursor: pointer;
 }
 .card-wraper:hover{
-    opacity: 0.3;
+    opacity: 0.5;
     cursor: pointer;
 }
 
@@ -494,6 +532,13 @@ footer{
 .summary p{
     margin-bottom: 15px;
 }
+.summary-info{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 170px;
+}
 .description-info{
     max-width: 30%;
     padding: 2rem 2rem 0 0;
@@ -632,7 +677,7 @@ footer{
 
     .bars i{
         font-size: 2rem;
-        color: #FFF;
+        color: var(--color-white);
     }
 
     .logo{
@@ -667,7 +712,7 @@ footer{
         background-color: #363636;
         font-family: var(--font-secundary);
         opacity: 0.4;
-        color: #fff;
+        color: var(--color-white);
     }
     .search input:hover{
         opacity: 1;
