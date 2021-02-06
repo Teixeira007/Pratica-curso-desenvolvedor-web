@@ -12,7 +12,7 @@
     <title>Loja</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container" class="container">
         <header>
             <div class="first-menu">    
                 <div class="logo">
@@ -40,20 +40,30 @@
                 </div>
                 <span id="span-search">Buscar no site</span>
                 <div class="cart">
-                    <a class="btn-cart" href="">
+                    <a class="btn-cart" id="btn-cart" href="#">
                         <i class="fa fa-shopping-cart"></i>
                     </a>
                 </div>
             </div>
         </header>
+        <div class="opacity">
+
         <p class="title" style="overflow: hidden;"></p>
         <h2 class="title">Produtos Natura de pronta entrega</h2>
-        
         <section class="products-natura" id="products"></section>
-
-        <section class="cart" id='cart'></section>
+        <aside class="aside-cart" id="aside-cart">
+            <h2 class="title-cart">Meu Carrinho</h2>
+            <a id="icon-close" href="#">
+                <i class="fa fa-times"></i>
+            </a>
+            <section class="my-cart" id='cart'>
+                <h2 class="cart-clear">Você não tem nenhum produto no carrinho</h2>
+            </section>
+        </aside>
 
         <footer></footer>
+        </div>
+
     </div>
     <script src="script.js"></script>
 </body>

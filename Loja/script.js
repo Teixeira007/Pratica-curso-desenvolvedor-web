@@ -73,7 +73,6 @@ inicializarLoja = () => {
                     <a href="#" key="`+val.id+`" class="btn-buy">Comprar<i class="fa fa-shopping-cart"></i></a>
                 </div>
             </div>
-
         `
     }
 }
@@ -86,8 +85,17 @@ atualizarCarrinho = () =>{
     items.map((val)=>{  //map é uma função que funciona +- como uma laço
         if(val.quantity > 0){
             containerCart.innerHTML +=`
-                <p>Nome: `+val.name+` Quantidade: `+val.quantity+`</p>
-        `
+                <p class="my-products">Meus Produtos</p>
+                <div id="cart-products" class="cart-products">
+                    <div class="cart-wraper">
+                        <img src="`+val.img+`" alt="">
+                    </div>
+                    <p class="cart-name">`+val.name+`</p>
+                    <a href="#" class="cart-trash"><i class="fa fa-trash"></i></a>
+                    <input chave="`+val.id+`" class="cart-quantity" value="`+val.quantity+`" type="number" name="input-quantity">
+                    <p class="cart-price">R$ `+val.price*val.quantity+`</p>    
+                </div>
+            `
         }
     })
 }
@@ -102,5 +110,9 @@ atualizarCarrinho = () =>{
             return false
         })
     }
-
-
+    
+    
+   document.getElementById('btn-cart').addEventListener('click', function(){
+       document.querySelector('.container').classList.toggle('show-cart')
+   })
+    
