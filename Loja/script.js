@@ -85,7 +85,6 @@ atualizarCarrinho = () =>{
     items.map((val)=>{  //map é uma função que funciona +- como uma laço
         if(val.quantity > 0){
             containerCart.innerHTML +=`
-                <p class="my-products">Meus Produtos</p>
                 <div id="cart-products" class="cart-products">
                     <div class="cart-wraper">
                         <img src="`+val.img+`" alt="">
@@ -93,15 +92,34 @@ atualizarCarrinho = () =>{
                     <p class="cart-name">`+val.name+`</p>
                     <a href="#" class="cart-trash"><i class="fa fa-trash"></i></a>
                     <input chave="`+val.id+`" class="cart-quantity" value="`+val.quantity+`" type="number" name="input-quantity">
-                    <p class="cart-price">R$ `+val.price*val.quantity+`</p>    
+                    <p class="cart-price">R$ `+val.price*val.quantity+`</p>   
                 </div>
-            `
+                <div class="footer-products">
+                <div class="footer-products-info">
+                    <span>Total</span>
+                    <span id="quantity-total">R$  </span>
+                </div>
+                <div class="footer-products-btn">
+                    <button id="btn-enviar">Finalizar Pedido <i class="fa fa-arrow-right"></i></button>
+                </div>
+            </div>
+            `            
         }
     })
-}
+} 
+// calcQuantityTotal = () =>{
+//     var link = document.getElementsByClassName('btn-buy')
+//     let quantityTotal = 0
+//     for(let i=0; i<link.length;i++){
+//         link[i].addEventListener('click', function(){
+//             quantityTotal++
+//         })
+//         return quantityTotal
+//     }
+// }
 
     var links = document.getElementsByClassName('btn-buy')
-    for(var i=0; i<links.length; i++){
+    for(let i=0; i<links.length; i++){
         //evento para quando o botão de comprar for acionado
         links[i].addEventListener('click', function(){
             let key = this.getAttribute('key')
@@ -111,8 +129,17 @@ atualizarCarrinho = () =>{
         })
     }
     
-    
+
    document.getElementById('btn-cart').addEventListener('click', function(){
        document.querySelector('.container').classList.toggle('show-cart')
    })
-    
+   document.getElementById('btn-cart').addEventListener('click', function(){
+    document.querySelector('.every').classList.toggle('hidden-scroll')
+    })
+   document.getElementById('icon-close').addEventListener('click', function(){
+       document.querySelector('.container').classList.toggle('show-cart')
+   })
+
+   document.getElementById('icon-close').addEventListener('click', function(){
+    document.querySelector('.every').classList.toggle('hidden-scroll')
+    })

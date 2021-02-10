@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="every">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
                 <nav class="menu">
                     <ul>
                         <li class="item-menu"><a href="" class="link-menu">Início</a></li>
-                        <li class="item-menu"><a href="" class="link-menu">Avon</a></li>
+                        <li onclick="teste()" class="item-menu"><a href="#" class="link-menu">Avon</a></li>
                         <li class="item-menu"><a href="" class="link-menu">Natura</a></li>
                         <li class="item-menu"><a href="" class="link-menu">Boticário</a></li>
                         <li class="item-menu"><a href="" class="link-menu">Catálogos</a></li>
@@ -46,23 +46,26 @@
                 </div>
             </div>
         </header>
-        <div class="opacity">
+        <div class="opacity"></div>
 
         <p class="title" style="overflow: hidden;"></p>
         <h2 class="title">Produtos Natura de pronta entrega</h2>
         <section class="products-natura" id="products"></section>
         <aside class="aside-cart" id="aside-cart">
             <h2 class="title-cart">Meu Carrinho</h2>
+            <p class="my-products">Meus Produtos</p>
             <a id="icon-close" href="#">
                 <i class="fa fa-times"></i>
             </a>
             <section class="my-cart" id='cart'>
                 <h2 class="cart-clear">Você não tem nenhum produto no carrinho</h2>
+               
+
             </section>
         </aside>
 
         <footer></footer>
-        </div>
+      
 
     </div>
     <script src="script.js"></script>
