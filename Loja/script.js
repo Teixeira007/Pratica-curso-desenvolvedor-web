@@ -1,5 +1,4 @@
 
-
 //Criando Objetos que será os intens a venda
 const items =[
     {
@@ -97,7 +96,7 @@ atualizarCarrinho = () =>{
                 <div class="footer-products">
                 <div class="footer-products-info">
                     <span>Total</span>
-                    <span id="quantity-total">R$  </span>
+                    <span id="quantity-total">R$ ${quantityTotal} </span>
                 </div>
                 <div class="footer-products-btn">
                     <button id="btn-enviar">Finalizar Pedido <i class="fa fa-arrow-right"></i></button>
@@ -107,16 +106,15 @@ atualizarCarrinho = () =>{
         }
     })
 } 
-// calcQuantityTotal = () =>{
-//     var link = document.getElementsByClassName('btn-buy')
-//     let quantityTotal = 0
-//     for(let i=0; i<link.length;i++){
-//         link[i].addEventListener('click', function(){
-//             quantityTotal++
-//         })
-//         return quantityTotal
-//     }
-// }
+
+    let quantityTotal = 0
+    var link = document.getElementsByClassName('btn-buy')
+    for(let i=0; i<link.length;i++){
+        link[i].addEventListener('click', function(){
+            quantityTotal++
+            return quantityTotal
+        })
+    }
 
     var links = document.getElementsByClassName('btn-buy')
     for(let i=0; i<links.length; i++){
